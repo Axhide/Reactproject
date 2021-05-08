@@ -25,7 +25,9 @@ const App = (props) => {
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/music' render={() => <Music/>}/>
                 <Route path='/settings' render={() => <Settings/>}/>
-                <Route path='/friends' render={() => <Friends state={props.state.sideBar}/>}/>
+                <Route path='/friends'
+                       render={() => <Friends store={props.store}
+                                              state={props.state.sideBar}/>}/>
             </div>
         </div>
     );

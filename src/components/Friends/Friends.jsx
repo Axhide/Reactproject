@@ -3,9 +3,10 @@ import FriendsItem from "./FriendsItem/FriendsItem";
 import s from './Friends.module.css';
 
 const Friends = (props) => {
+    let state = props.store.getState().sideBar;
 
     let friends =
-        props.state.friends.map(d => <FriendsItem name={d.name} id={d.id}/>)
+        state.friends.map(d => <FriendsItem name={d.name} id={d.id}/>)
 
     return (
         <div className={s.friendsItem}>

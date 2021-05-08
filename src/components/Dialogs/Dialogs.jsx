@@ -37,7 +37,6 @@ const Dialogs = (props) => {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
