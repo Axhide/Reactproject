@@ -13,14 +13,3 @@
 .item a.active {
     color: gold;
 }
-
-.friendsItem a {
-    color: white;
-    text-decoration: none;
-    font-size: 30px;
-
-}
-
-.friendsItem .active{
-    color: gold;
-}
