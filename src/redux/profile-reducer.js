@@ -9,6 +9,7 @@ let initialState = {
     ],
     newPostText: "напиши че нить",
     profile: null
+
 };
 
 export const profileReducer = (state = initialState, action) => {
