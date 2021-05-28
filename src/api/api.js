@@ -27,19 +27,23 @@ export const usersAPI = {
                 return response.data
             });
         },
-    getAuth() {
-        return instance.get(`auth/me`)
-            .then(response => {
-                return response.data
-            });
-    },
-    getProfile(userId) {
+    getUserProfile(userId) {
         return instance.get(`profile/${userId}`)
             .then(response => {
                 return response.data
             });
     }
 }
+
+export const authAPI = {
+    me() {
+        return instance.get(`auth/me`)
+            .then(response => {
+                return response.data
+            });
+    }
+}
+
 
 
 
