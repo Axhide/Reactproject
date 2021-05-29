@@ -2,12 +2,15 @@ import React from 'react'
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import {Redirect} from 'react-router-dom'
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-    let messagesElements = props.messages.map(message => <Message message={message.message}/>);
-    let newMessageBody = props.newMessageBody;
+    let state = props.dialogsPage;
+
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
+    let messagesElements = state.messages.map(message => <Message message={message.message}/>);
+    let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {
         props.addMessage();
@@ -17,6 +20,8 @@ const Dialogs = (props) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
     }
+
+    if (!props.isAuth) return <Redirect to={'/login'}/>;
 
     return (
         <div className={s.dialogs}>
